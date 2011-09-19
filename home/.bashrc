@@ -21,7 +21,6 @@ alias linkup="sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0
 
 # mac aliases
 alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
-alias saver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
 
 # configure my multi-line prompt
 PS1='
