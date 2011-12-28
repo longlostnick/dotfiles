@@ -9,17 +9,15 @@ alias l="ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1)~/[rwxst]
 alias tree="find . -type d | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'"
 
 # rails aliases
-alias brake="bundle exec rake spec"
+alias brake="bundle exec rake"
 
 # git aliases
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
-# FBS aliases
-alias cdfrink="cd /Volumes/Frink/"
-alias cdfarns="cd /Volumes/Farnsworth/"
+# stuff
 alias linkup="sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0"
 
-# mac aliases
+# mac crap
 alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
 
 # configure my multi-line prompt
