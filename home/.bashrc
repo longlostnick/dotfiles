@@ -20,6 +20,9 @@ alias linkup="sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0
 # mac crap
 alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
 
+# minecraft
+alias servcraft="java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui"
+
 # configure my multi-line prompt
 PS1='
 $PWD
@@ -27,3 +30,6 @@ $PWD
 
 # iterm tab titles!
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
+
+# node.js
+export NODE_PATH="/usr/local/lib/node;/usr/local/lib/node_modules"

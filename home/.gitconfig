@@ -1,0 +1,28 @@
+[core]
+	editor = vim
+	excludesfile = /Users/Nick/.gitignore_global
+[user]
+	name = Nick Larson
+	email = nick.larson@gmail.com
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+[github]
+	user = ifightcrime
+[merge]
+    tool = vimdiff
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = red
+    untracked = cyan

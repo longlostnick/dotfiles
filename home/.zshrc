@@ -34,7 +34,9 @@ export PATH=/Users/Nick/.rvm/gems/ruby-1.9.2-p290/bin:/Users/Nick/.rvm/gems/ruby
 # some of my own stuff
 alias cd.='cd ..'
 alias ls='ls --color'
-alias la='ls -a'
+alias la='ls -a --color'
+alias l='ls -latr --color'
+alias vi='vim'
 
 # rails aliases
 alias brake="bundle exec rake"
@@ -45,9 +47,15 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 # stuff
 alias linkup="sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0"
 
+# minecraft
+alias servcraft="java -Xmx1024M -Xms1024M -jar ~/Documents/Games/minecraft_server/minecraft_server.jar nogui"
+
 # mac crap
 alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
 export COPYFILE_DISABLE=true
 
 # Ruby Version Manager!
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# node.js
+export NODE_PATH="/usr/local/lib/node;/usr/local/lib/node_modules"
