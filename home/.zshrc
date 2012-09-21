@@ -29,17 +29,12 @@ plugins=(git rails3 ruby osx brew)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/Nick/.rvm/gems/ruby-1.9.2-p290/bin:/Users/Nick/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/Nick/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/Nick/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH="$HOME/.rbenv/bin:/usr/X11/bin:/usr/local/git/bin:$PATH"
 
 # some of my own stuff
 alias cd.='cd ..'
-alias ls='ls --color'
-alias la='ls -a --color'
-alias l='ls -latr --color'
-alias vi='vim'
-
-# rails aliases
-alias brake="bundle exec rake"
+alias la='ls -a'
+alias l='ls -latr'
 
 # git aliases
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
@@ -54,8 +49,7 @@ alias servcraft="java -Xmx1024M -Xms1024M -jar ~/Documents/Games/minecraft_serve
 alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
 export COPYFILE_DISABLE=true
 
-# Ruby Version Manager!
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
 # node.js
 export NODE_PATH="/usr/local/lib/node;/usr/local/lib/node_modules"
+
+eval "$(rbenv init -)"
