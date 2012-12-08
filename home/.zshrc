@@ -29,7 +29,7 @@ plugins=(git rails3 ruby osx brew)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH="$HOME/.rbenv/bin:/usr/X11/bin:/usr/local/git/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/X11/bin:/usr/local/bin:$PATH"
 
 # some of my own stuff
 alias cd.='cd ..'
