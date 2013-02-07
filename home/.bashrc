@@ -35,3 +35,6 @@ $PWD
 
 # iterm tab titles!
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
+
+# UTF-8
+export LC_ALL=`locale -a | grep -i "en_US.utf-\?8"`
