@@ -26,6 +26,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rails3 ruby osx brew)
 
+# Bash-like navigation
+autoload -U select-word-style
+select-word-style bash
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -42,14 +46,12 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 # stuff
 alias linkup="sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0"
 
-# minecraft
-alias servcraft="java -Xmx1024M -Xms1024M -jar ~/Documents/Games/minecraft_server/minecraft_server.jar nogui"
-
 # mac crap
 alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
 export COPYFILE_DISABLE=true
 
-# node.js
-export NODE_PATH="/usr/local/lib/node;/usr/local/lib/node_modules"
+# TODO: find a better place for this
+bindkey '^[[1;9D' backward-word
+bindkey '^[[1;9C' forward-word
 
 eval "$(rbenv init -)"
