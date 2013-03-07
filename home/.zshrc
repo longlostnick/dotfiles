@@ -52,6 +52,8 @@ export COPYFILE_DISABLE=true
 
 # TODO: find a better place for this
 bindkey '^[[1;9D' backward-word
+bindkey '^[[1;3D' backward-word
 bindkey '^[[1;9C' forward-word
+bindkey '^[[1;3C' forward-word
 
 eval "$(rbenv init -)"
