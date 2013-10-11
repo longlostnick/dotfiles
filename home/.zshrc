@@ -33,7 +33,7 @@ select-word-style bash
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH="$HOME/.rbenv/bin:/usr/X11/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/X11/bin:$PATH"
 
 # some of my own stuff
 alias cd.='cd ..'
@@ -44,11 +44,8 @@ alias l='ls -latr'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 # stuff
-alias linkup="sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0"
-
-# mac crap
-alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
-export COPYFILE_DISABLE=true
+alias linkup="sudo route delete 192.168.200.0 192.168.74.250 -netmask 255.255.252.0;sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0"
+alias linkdown="sudo route delete 192.168.200.0 192.168.74.250 -netmask 255.255.252.0"
 
 # TODO: find a better place for this
 bindkey '^[[1;9D' backward-word
@@ -57,3 +54,6 @@ bindkey '^[[1;9C' forward-word
 bindkey '^[[1;3C' forward-word
 
 eval "$(rbenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
