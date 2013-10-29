@@ -8,33 +8,16 @@ alias tree="find . -type d | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'
 # git aliases
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
-# stuff
-alias linkup="sudo route delete 192.168.200.0 192.168.74.250 -netmask 255.255.252.0;sudo route add 192.168.200.0 192.168.74.250 -netmask 255.255.252.0"
-
-# minecraft
-alias servcraft="java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui"
-
-# mongo
-alias mongod="sudo /usr/local/Cellar/mongodb/1.8.3-x86_64/bin/mongod --fork --logpath /var/log/mongod.log"
-
-# mac crap
-alias dotclean="find . \( -name '._*' -o -name '.DS_Store' \)  -exec rm {} \;"
-
 # git+prompt fanciness
 function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/git:(\1$(parse_git_dirty)) /"
 }
 
 # configure my multi-line prompt
-PS1='
-$PWD
-[\u@\h]$ $(parse_git_branch)'
+PS1='\u@\h$ $(parse_git_branch)'
 
-# iterm tab titles!
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
-
-# UTF-8
-export LC_ALL=`locale -a | grep -i "en_US.utf-\?8"`
+export PATH="/usr/local/bin:$PATH" # homebrew
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
