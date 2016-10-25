@@ -7,16 +7,21 @@ alias tree="find . -type d | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'
 
 [[ -s "$HOME/.bashrc-secrets" ]] && source "$HOME/.bashrc-secrets"
 
-# git aliases
-alias gdiff="git diff --color | sed -E \"s/^([^-+ ]*)[-+ ]/\\1/\""
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+# git stuff
+alias gs="git status"
+alias go="git checkout"
+alias gm="git merge"
+alias ga="git add ."
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias gd="git diff --color | sed -E \"s/^([^-+ ]*)[-+ ]/\\1/\""
+gc () { git commit -m "$(git rev-parse --abbrev-ref HEAD): $*"; }
 
 # show git branch
-parse_git_dirty() {
+parse_git_dirty () {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
-parse_git_branch() {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/git:(\1$(parse_git_dirty)) /"
+parse_git_branch () {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty) /"
 }
 
 # configure my multi-line prompt
