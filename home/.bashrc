@@ -12,9 +12,12 @@ alias gs="git status"
 alias go="git checkout"
 alias gm="git merge"
 alias ga="git add ."
+alias gp="git pull"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias gd="git diff --color | sed -E \"s/^([^-+ ]*)[-+ ]/\\1/\""
-gc () { git commit -m "$(git rev-parse --abbrev-ref HEAD): $*"; }
+function gc() { git commit -m "$*"; }
+function gcb() { git commit -m "$(git rev-parse --abbrev-ref HEAD): $*"; }
+#function gpb() { git push origin $(git rev-parse --abbrev-ref HEAD); }
+function gd() { git diff --color $* | sed -E "s/^([^-+ ]*)[-+ ]/\\1/" | less -R; }
 
 # show git branch
 parse_git_dirty () {
